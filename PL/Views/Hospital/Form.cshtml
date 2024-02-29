@@ -1,0 +1,39 @@
+﻿@model ML.Hospital
+@{
+    ViewData["Title"] = "Form";
+}
+
+<h1>Formulario</h1>
+
+@using (Html.BeginForm("Form", "Hospital", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class ="row">
+        <div class="col-md-5">
+         @Html.LabelFor(model => model.Nombre)
+         @Html.TextBoxFor(model=>model.Nombre , new { @class="form control"} )
+        </div>
+
+        <div class="col-md-5">
+            @Html.LabelFor(model => model.Direccion)
+            @Html.TextBoxFor(model => model.Direccion, new { @class = "form control" })
+        </div>
+
+        <div class="col-md-5">
+            @Html.LabelFor(model => model.Capacidad)
+            @Html.TextBoxFor(model => model.Capacidad, new { @class = "form control" })
+        </div>
+        <div class="col-md-5">
+            @Html.LabelFor(model => model.AñoConstruccion)
+            @Html.TextBoxFor(model => model.AñoConstruccion, new { @class = "form control" })
+        </div>
+        <div class="col-md-5">
+            @Html.LabelFor(model => model.especialidad.IdEspecialidad)
+            @Html.TextBoxFor(model => model.especialidad.IdEspecialidad, new { @class = "form control" })
+        </div>
+        <button class="btn-success col-md-5" class="submit">Agregar</button>
+
+    </div>
+   
+
+}
+
